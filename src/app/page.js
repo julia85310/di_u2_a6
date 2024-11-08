@@ -29,7 +29,10 @@ export default function Home() {
         <LightSwitch />
       </div>
       <div onClick={handleClickOutside}>
-        <ColorSwitch  onChangeColor={handleChangeColor} />
+        <ColorSwitch  onChangeColor={ e => {
+          e.stopPropagation();
+          handleChangeColor;
+          }} />
         <br />
       <br />
       <h2>Clics en la página: {clicks}</h2>
